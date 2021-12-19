@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh !important;
+            overflow: hidden !important;
+            background: url(bg.jpg);
+            background-size: 100vw 100vh;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 28rem;
+            height: 28rem;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            background: #b6c2ff5d;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(0px);
+            -webkit-backdrop-filter: blur(0px);
+            border-radius: 10px;
+        }
+
+        .lottie {
+            margin-top: -3rem;
+            height: 8rem;
+
+        }
+
+        label {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: rgb(85, 85, 85);
+        }
+
+        input {
+            padding: 1rem;
+            border-radius: 0.5rem !important;
+            border: none;
+            outline: none;
+            box-shadow: 0.2rem 0.2rem 0.9rem 0rem rgba(85, 85, 85, 0.2) inset;
+            margin-top: -1.5rem;
+            background-color: #b6c2ff5d;
+            color: rgb(85, 85, 85);
+        }
+
+        input::placeholder {
+            color: rgb(85, 85, 85) !important;
+        }
+
+        button {
+            font-size: 1.2rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 0.5rem;
+            border: none;
+            outline: none;
+            letter-spacing: 0.1rem;
+            background-color: #0275d8;
+            color: white;
+            font-weight: bold;
+
+        }
+
+        button:hover {
+            cursor: pointer !important;
+            transform: scale(0.95);
+        }
+
+        textarea {
+            resize: none;
+            border: none;
+            outline: none;
+            border-radius: 0.5rem;
+            color: rgb(85, 85, 85);
+            background: #b6c2ff5d;
+            box-shadow: 0.2rem 0.2rem 0.9rem 0rem rgba(85, 85, 85, 0.2) inset;
+            padding-bottom: 0rem;
+        }
+
+        textarea::placeholder {
+            color: rgb(85, 85, 85) !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="lottie">
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_FVqg63.json" background="transparent"
+                speed="1" loop autoplay></lottie-player>
+        </div>
+        <label for="num">Decimal => Binary</label><br>
+        <input type="number" id="num" placeholder="Enter a Number" autocomplete="off"><br>
+        <button type="button" id="btn">CONVERT</button>
+        <textarea id="demo" cols="30" rows="5" placeholder="NOTHING TO SHOW"></textarea>
+    </div>
+
+    <script>
+        document.getElementById("btn").onclick = function () {
+            var x = document.getElementById("num").value;
+            var y = parseInt(x);
+            var z = y.toString(2)
+            document.getElementById("demo").innerHTML = `${z}`;
+        }
+    </script>
+</body>
+
+</html>
