@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <style>
         * {
             box-sizing: border-box;
@@ -22,6 +23,7 @@
             height: 100vh !important;
             overflow: hidden !important;
             background: url(bg.jpg);
+
             background-size: 100vw 100vh;
             background-repeat: no-repeat;
             display: flex;
@@ -48,7 +50,6 @@
         .lottie {
             margin-top: -3rem;
             height: 8rem;
-
         }
 
         label {
@@ -71,6 +72,7 @@
 
         input::placeholder {
             color: rgb(85, 85, 85) !important;
+            font-size: 0.85rem;
         }
 
         button {
@@ -89,7 +91,7 @@
 
         button:hover {
             cursor: pointer !important;
-            transform: scale(0.95);
+            transform: scale(0.97);
         }
 
         textarea {
@@ -100,11 +102,18 @@
             color: rgb(85, 85, 85);
             background: #b6c2ff5d;
             box-shadow: 0.2rem 0.2rem 0.9rem 0rem rgba(85, 85, 85, 0.2) inset;
-            padding-bottom: 0rem;
+            width: 90%;
+            height: 30%;
+            padding: 0.5rem;
         }
 
         textarea::placeholder {
             color: rgb(85, 85, 85) !important;
+            position: absolute;
+            top: 42%;
+            transform: translateY(-50%);
+            left: 50%;
+            transform: translateX(-50%);
         }
     </style>
 </head>
@@ -117,18 +126,19 @@
             <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_FVqg63.json" background="transparent"
                 speed="1" loop autoplay></lottie-player>
         </div>
-        <label for="num">Decimal => Binary</label><br>
-        <input type="number" id="num" placeholder="Enter a Number" autocomplete="off"><br>
+        <label for="decimal">Decimal => Binary</label><br>
+        <input type="number" id="decimal" placeholder="Enter Decimal Number (max:17 digit)" autofocus autocomplete="off"><br>
         <button type="button" id="btn">CONVERT</button>
-        <textarea id="demo" cols="30" rows="5" placeholder="NOTHING TO SHOW"></textarea>
+        <textarea id="txtarea" placeholder="NOTHING TO SHOW"></textarea>
     </div>
 
     <script>
         document.getElementById("btn").onclick = function () {
-            var x = document.getElementById("num").value;
+            var x = document.getElementById("decimal").value;
             var y = parseInt(x);
-            var z = y.toString(2)
-            document.getElementById("demo").innerHTML = `${z}`;
+            var z = y.toString(2);
+
+            document.getElementById("txtarea").innerHTML = `${z}`;
         }
     </script>
 </body>
